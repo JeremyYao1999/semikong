@@ -1,5 +1,6 @@
-# Minimal Ontology Placeholder
-# This is a placeholder ontology for 06-osat-packaging-test assembly_processes 
+# Semicont Ontology Module: 06-osat-packaging-test/assembly_processes
+# Assembly processes layer. Provides the AssemblyProcess superclass referenced by assembly sub-process modules
+# (die attach, backside grinding, backside metallization, encapsulation, molding).
 
 @prefix semicont-06-osat-packaging-test-assembly_processes: <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes/#> .
 @prefix semicont-core: <https://semicont.org/ontology/00-shared#> .
@@ -9,31 +10,21 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-# Module Metadata
 semicont-06-osat-packaging-test-assembly_processes: a owl:Ontology ;
-    rdfs:label "assembly processes Ontology" ;
-    rdfs:comment "Ontology for 06-osat-packaging-test assembly_processes " ;
+    rdfs:label "assembly processes ontology" ;
+    rdfs:comment "Ontology for the 06-osat-packaging-test assembly processes layer." ;
     owl:versionInfo "0.1.0" ;
     owl:imports <https://semicont.org/ontology/00-shared> ;
-        dc:source "Industry-general knowledge of 06 osat packaging test 00 assembly processes" ;
+    dc:source "Industry-general knowledge of OSAT assembly processes" ;
     dc:rights "Fair use: publicly known industry concepts" ;
-    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-build> ;
-    prov:generatedAtTime "2026-03-09"^^xsd:date .
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
 
-# Placeholder Classes
-semicont-06-osat-packaging-test-assembly_processes:PlaceholderClass a owl:Class ;
-    rdfs:label "Placeholder Class" ;
-    rdfs:comment "A placeholder class to be expanded" ;
+# Assembly process superclass (promoted from placeholder to resolve dangling subClassOf references)
+semicont-06-osat-packaging-test-assembly_processes:AssemblyProcess a owl:Class ;
+    rdfs:label "assembly process" ;
+    rdfs:comment "Process step in the OSAT/packaging assembly flow (e.g. die attach, backside grinding, backside metallization, encapsulation, molding)." ;
+    rdfs:subClassOf semicont-core:ProcessStep ;
     rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes: ;
-    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-build> ;
-    prov:generatedAtTime "2026-03-09"^^xsd:date .
-
-# Placeholder Properties
-semicont-06-osat-packaging-test-assembly_processes:placeholderProperty a owl:DatatypeProperty ;
-    rdfs:label "placeholder property" ;
-    rdfs:comment "A placeholder property to be expanded" ;
-    rdfs:domain semicont-06-osat-packaging-test-assembly_processes:PlaceholderClass ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes: ;
-    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-build> ;
-    prov:generatedAtTime "2026-03-09"^^xsd:date .
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
