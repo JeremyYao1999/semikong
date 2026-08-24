@@ -1,0 +1,83 @@
+# Semicont Ontology Module: 06-osat-packaging-test/assembly_processes/backside_metallization
+# Contributes wafer backside metallization (BM) semantics, including e-beam evaporation, sputtering, and electroplating.
+
+@prefix semicont-06-osat-packaging-test-assembly_processes-backside_metallization: <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes/04-backside-metallization/#> .
+@prefix semicont-06-osat-packaging-test-assembly_processes: <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes/#> .
+@prefix semicont-core: <https://semicont.org/ontology/00-shared#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+semicont-06-osat-packaging-test-assembly_processes-backside_metallization: a owl:Ontology ;
+    rdfs:label "backside metallization ontology" ;
+    rdfs:comment "Semantic module for wafer backside metallization (BM) in the semiconductor ontology." ;
+    owl:versionInfo "0.1.0" ;
+    owl:imports <https://semicont.org/ontology/00-shared> ;
+    dc:source "Industry-general knowledge of backside metallization processes" ;
+    dc:rights "Fair use: publicly known industry concepts" ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Core process class
+semicont-06-osat-packaging-test-assembly_processes-backside_metallization:BacksideMetallizationProcess a owl:Class ;
+    rdfs:label "backside metallization" ;
+    rdfs:comment "Wafer backside metallization (BM), deposition of a metal layer on the thinned wafer backside to form an ohmic backside contact (drain/collector electrode for vertical power devices), provide a solderable/bondable surface, improve thermal dissipation and corrosion resistance, and mechanically protect the thinned backside." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes:AssemblyProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_metallization: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Deposition methods
+semicont-06-osat-packaging-test-assembly_processes-backside_metallization:ElectronBeamEvaporationProcess a owl:Class ;
+    rdfs:label "electron beam evaporation" ;
+    rdfs:comment "Backside metallization method using an electron beam to heat and evaporate metal in high vacuum; metal atoms travel in a straight line (line-of-sight) and deposit on the wafer backside. Suited to high-melting-point metals and thick films, with poorer step coverage than sputtering." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_metallization:BacksideMetallizationProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_metallization: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+semicont-06-osat-packaging-test-assembly_processes-backside_metallization:SputteringProcess a owl:Class ;
+    rdfs:label "sputtering deposition" ;
+    rdfs:comment "Backside metallization method using magnetron sputtering to deposit metal (e.g. Ti/Ni/Ag layers); offers better adhesion and step coverage than evaporation and is a mainstream method for multi-layer backside metal stacks." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_metallization:BacksideMetallizationProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_metallization: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+semicont-06-osat-packaging-test-assembly_processes-backside_metallization:ElectroplatingProcess a owl:Class ;
+    rdfs:label "electroplating" ;
+    rdfs:comment "Backside metallization method using electrochemical deposition for thick metal layers (e.g. thick Cu or Ni) on the wafer backside." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_metallization:BacksideMetallizationProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_metallization: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Metal stack as a material
+semicont-06-osat-packaging-test-assembly_processes-backside_metallization:BacksideMetalStack a owl:Class ;
+    rdfs:label "backside metal stack" ;
+    rdfs:comment "Metal or multi-layer metal stack deposited on the wafer backside. Typical layer roles: Ti as adhesion/silicide ohmic-contact layer, Ni or NiV as diffusion barrier, and Ag or Au as solderable/bondable top layer; Al forms an Al-Si ohmic contact for non-solder applications. Selected for ohmic contact, adhesion, diffusion barrier, thermal, and solderability requirements." ;
+    rdfs:subClassOf semicont-core:Material ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_metallization: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Defect concepts
+semicont-06-osat-packaging-test-assembly_processes-backside_metallization:BacksideMetallizationDefect a owl:Class ;
+    rdfs:label "backside metallization defect" ;
+    rdfs:comment "Defect introduced by backside metallization, including metal peeling/delamination, poor adhesion, interface voids, metal interdiffusion, and oxidation of the top metal." ;
+    rdfs:subClassOf semicont-core:Defect ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_metallization: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Key properties
+semicont-06-osat-packaging-test-assembly_processes-backside_metallization:hasMetalStack a owl:DatatypeProperty ;
+    rdfs:label "has metal stack" ;
+    rdfs:comment "Metal stack composition deposited on the wafer backside." ;
+    rdfs:domain semicont-06-osat-packaging-test-assembly_processes-backside_metallization:BacksideMetallizationProcess ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_metallization: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
