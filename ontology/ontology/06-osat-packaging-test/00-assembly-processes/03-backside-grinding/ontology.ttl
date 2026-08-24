@@ -1,0 +1,111 @@
+# Semicont Ontology Module: 06-osat-packaging-test/assembly_processes/backside_grinding
+# Contributes wafer backside grinding (thinning) semantics, including Taiko processing and stress relief.
+
+@prefix semicont-06-osat-packaging-test-assembly_processes-backside_grinding: <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes/03-backside-grinding/#> .
+@prefix semicont-06-osat-packaging-test-assembly_processes: <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes/#> .
+@prefix semicont-core: <https://semicont.org/ontology/00-shared#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding: a owl:Ontology ;
+    rdfs:label "backside grinding ontology" ;
+    rdfs:comment "Semantic module for wafer backside grinding (thinning) in the semiconductor ontology." ;
+    owl:versionInfo "0.1.0" ;
+    owl:imports <https://semicont.org/ontology/00-shared> ;
+    dc:source "Industry-general knowledge of backside grinding and wafer thinning processes" ;
+    dc:rights "Fair use: publicly known industry concepts" ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Core process class
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess a owl:Class ;
+    rdfs:label "backside grinding" ;
+    rdfs:comment "Wafer backside grinding (BG), an in-feed grinding process that thins the wafer backside to a target thickness to improve thermal dissipation, electrical and mechanical performance, reduce package form factor, and reduce dicing load." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes:AssemblyProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Grinding steps
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:RoughGrindingStep a owl:Class ;
+    rdfs:label "rough grinding step" ;
+    rdfs:comment "Coarse-grit grinding stage that removes the bulk of wafer thickness at a high removal rate." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:FineGrindingStep a owl:Class ;
+    rdfs:label "fine grinding step" ;
+    rdfs:comment "Fine-grit grinding stage that reduces the damaged layer depth and controls final thickness, surface roughness, and total thickness variation." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Stress relief (post-grinding damaged-layer removal)
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:StressReliefStep a owl:Class ;
+    rdfs:label "stress relief step" ;
+    rdfs:comment "Post-grinding step that removes the sub-surface damaged layer and relieves residual stress, via wet etch (e.g. HF/HNO3 mixed acid), dry polish, or CMP, performed before backside metallization or bonding to prevent metal adhesion loss, wafer warpage, and breakage." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Taiko process (edge-retained thinning for ultra-thin wafers)
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:TaikoGrindingProcess a owl:Class ;
+    rdfs:label "taiko grinding" ;
+    rdfs:comment "Backside grinding variant that retains a full-thickness edge support ring (typically 2-3 mm wide) while thinning only the wafer center, reducing warpage and breakage risk for ultra-thin wafers (typically below ~150 um, commonly 50-100 um). The route requires BG tape lamination, pre-grinding, a stress-relief step after thinning, and a final de-ring step to remove the edge support ring." ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Defect concepts caused by grinding
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingDefect a owl:Class ;
+    rdfs:label "backside grinding defect" ;
+    rdfs:comment "Defect introduced by backside grinding, including scratch, crack, edge chipping, sub-surface damage, silicon dust residue, surface damage, and residual stress, which can lead to warpage, wafer breakage, or cracking in subsequent steps." ;
+    rdfs:subClassOf semicont-core:Defect ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+# Key parameters
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:hasTargetThickness a owl:DatatypeProperty ;
+    rdfs:label "has target thickness" ;
+    rdfs:comment "Target final wafer thickness after backside grinding." ;
+    rdfs:domain semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:hasTotalThicknessVariation a owl:DatatypeProperty ;
+    rdfs:label "has total thickness variation" ;
+    rdfs:comment "Total thickness variation (TTV) across the wafer after grinding, a key uniformity metric." ;
+    rdfs:domain semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:hasSurfaceRoughness a owl:DatatypeProperty ;
+    rdfs:label "has surface roughness" ;
+    rdfs:comment "Surface roughness (Ra) of the wafer backside after grinding, a key quality metric." ;
+    rdfs:domain semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
+
+semicont-06-osat-packaging-test-assembly_processes-backside_grinding:hasWarpage a owl:DatatypeProperty ;
+    rdfs:label "has warpage" ;
+    rdfs:comment "Warpage or bow of the thinned wafer after grinding, a key metric for ultra-thin wafers." ;
+    rdfs:domain semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
+    prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
+    prov:generatedAtTime "2026-08-24"^^xsd:date .
