@@ -14,7 +14,8 @@ semicont-06-osat-packaging-test-assembly_processes-backside_grinding: a owl:Onto
     rdfs:label "backside grinding ontology" ;
     rdfs:comment "Semantic module for wafer backside grinding (thinning) in the semiconductor ontology." ;
     owl:versionInfo "0.1.0" ;
-    owl:imports <https://semicont.org/ontology/00-shared> ;
+    owl:imports <https://semicont.org/ontology/00-shared> ,
+        <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes> ;
     dc:source "Industry-general knowledge of backside grinding and wafer thinning processes" ;
     dc:rights "Fair use: publicly known industry concepts" ;
     prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
@@ -24,6 +25,9 @@ semicont-06-osat-packaging-test-assembly_processes-backside_grinding: a owl:Onto
 semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess a owl:Class ;
     rdfs:label "backside grinding" ;
     rdfs:comment "Wafer backside grinding (BG), an in-feed grinding process that thins the wafer backside to a target thickness to improve thermal dissipation, electrical and mechanical performance, reduce package form factor, and reduce dicing load." ;
+    dc:source "Industry-general knowledge of backside grinding and wafer thinning processes" ;
+    dc:rights "Fair use: publicly known industry concepts" ;
+    prov:wasInformedBy "Curated industry-general semantics for wafer backside thinning processes." ;
     rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes:AssemblyProcess ;
     rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
     prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
@@ -33,6 +37,9 @@ semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGri
 semicont-06-osat-packaging-test-assembly_processes-backside_grinding:RoughGrindingStep a owl:Class ;
     rdfs:label "rough grinding step" ;
     rdfs:comment "Coarse-grit grinding stage that removes the bulk of wafer thickness at a high removal rate." ;
+    dc:source "Industry-general knowledge of backside grinding and wafer thinning processes" ;
+    dc:rights "Fair use: publicly known industry concepts" ;
+    prov:wasInformedBy "Curated industry-general semantics for grinding process stages." ;
     rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
     rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
     prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
@@ -41,6 +48,9 @@ semicont-06-osat-packaging-test-assembly_processes-backside_grinding:RoughGrindi
 semicont-06-osat-packaging-test-assembly_processes-backside_grinding:FineGrindingStep a owl:Class ;
     rdfs:label "fine grinding step" ;
     rdfs:comment "Fine-grit grinding stage that reduces the damaged layer depth and controls final thickness, surface roughness, and total thickness variation." ;
+    dc:source "Industry-general knowledge of backside grinding and wafer thinning processes" ;
+    dc:rights "Fair use: publicly known industry concepts" ;
+    prov:wasInformedBy "Curated industry-general semantics for grinding process stages." ;
     rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
     rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
     prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
@@ -50,6 +60,9 @@ semicont-06-osat-packaging-test-assembly_processes-backside_grinding:FineGrindin
 semicont-06-osat-packaging-test-assembly_processes-backside_grinding:StressReliefStep a owl:Class ;
     rdfs:label "stress relief step" ;
     rdfs:comment "Post-grinding step that removes the sub-surface damaged layer and relieves residual stress, via wet etch (e.g. HF/HNO3 mixed acid), dry polish, or CMP, performed before backside metallization or bonding to prevent metal adhesion loss, wafer warpage, and breakage." ;
+    dc:source "Industry-general knowledge of backside grinding and wafer thinning processes" ;
+    dc:rights "Fair use: publicly known industry concepts" ;
+    prov:wasInformedBy "Curated industry-general semantics for post-grinding stress relief." ;
     rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
     rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
     prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
@@ -59,6 +72,9 @@ semicont-06-osat-packaging-test-assembly_processes-backside_grinding:StressRelie
 semicont-06-osat-packaging-test-assembly_processes-backside_grinding:TaikoGrindingProcess a owl:Class ;
     rdfs:label "taiko grinding" ;
     rdfs:comment "Backside grinding variant that retains a full-thickness edge support ring (typically 2-3 mm wide) while thinning only the wafer center, reducing warpage and breakage risk for ultra-thin wafers (typically below ~150 um, commonly 50-100 um). The route requires BG tape lamination, pre-grinding, a stress-relief step after thinning, and a final de-ring step to remove the edge support ring." ;
+    dc:source "Industry-general knowledge of Taiko grinding and wafer thinning processes" ;
+    dc:rights "Fair use: publicly known industry concepts" ;
+    prov:wasInformedBy "Curated industry-general semantics for edge-retained wafer thinning." ;
     rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingProcess ;
     rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
     prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
@@ -68,6 +84,9 @@ semicont-06-osat-packaging-test-assembly_processes-backside_grinding:TaikoGrindi
 semicont-06-osat-packaging-test-assembly_processes-backside_grinding:BacksideGrindingDefect a owl:Class ;
     rdfs:label "backside grinding defect" ;
     rdfs:comment "Defect introduced by backside grinding, including scratch, crack, edge chipping, sub-surface damage, silicon dust residue, surface damage, and residual stress, which can lead to warpage, wafer breakage, or cracking in subsequent steps." ;
+    dc:source "Industry-general knowledge of backside grinding and wafer thinning defects" ;
+    dc:rights "Fair use: publicly known industry concepts" ;
+    prov:wasInformedBy "Curated industry-general taxonomy of grinding-related defects." ;
     rdfs:subClassOf semicont-core:Defect ;
     rdfs:isDefinedBy semicont-06-osat-packaging-test-assembly_processes-backside_grinding: ;
     prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;

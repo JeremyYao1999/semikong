@@ -2,6 +2,7 @@
 
 @prefix semicont-06-osat-packaging-test-00-assembly-processes-02-molding: <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes/02-molding/#> .
 @prefix semicont-06-osat-packaging-test-00-assembly-processes: <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes/#> .
+@prefix semicont-06-osat-packaging-test-assembly_processes: <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes/#> .
 @prefix semicont-core: <https://semicont.org/ontology/00-shared#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -13,7 +14,8 @@ semicont-06-osat-packaging-test-00-assembly-processes-02-molding: a owl:Ontology
     rdfs:label "molding ontology" ;
     rdfs:comment "Semantic module for molding in the semiconductor ontology." ;
     owl:versionInfo "0.1.0" ;
-    owl:imports <https://semicont.org/ontology/00-shared> ;
+    owl:imports <https://semicont.org/ontology/00-shared> ,
+        <https://semicont.org/ontology/06-osat-packaging-test/00-assembly-processes> ;
         dc:source "Industry-general knowledge of 06 osat packaging test 00 assembly processes 02 molding" ;
     dc:rights "Fair use: publicly known industry concepts" ;
     prov:wasGeneratedBy <https://semicont.org/prov/activity/semicont-ontology-curation> ;
@@ -22,5 +24,5 @@ semicont-06-osat-packaging-test-00-assembly-processes-02-molding: a owl:Ontology
 semicont-06-osat-packaging-test-00-assembly-processes-02-molding:MoldingConcept a owl:Class ;
     rdfs:label "molding" ;
     rdfs:comment "Concept for molding; specialized under assembly processes." ;
-    rdfs:subClassOf semicont-06-osat-packaging-test-00-assembly-processes:AssemblyProcessesConcept ;
+    rdfs:subClassOf semicont-06-osat-packaging-test-assembly_processes:AssemblyProcess ;
     rdfs:isDefinedBy semicont-06-osat-packaging-test-00-assembly-processes-02-molding: .
